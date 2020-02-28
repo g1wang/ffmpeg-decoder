@@ -66,7 +66,9 @@ public class DecodeThread implements Runnable {
     /**
      * 校验文件
      *
+     *
      * @param ffMpegUtil
+     * @param file
      * @return
      */
     private boolean validateFile(FFMpegUtil ffMpegUtil, File file) {
@@ -99,6 +101,11 @@ public class DecodeThread implements Runnable {
     /**
      * 抽帧
      *
+     *
+     * @param filePath
+     * @param destPath
+     * @param tmpSuffix
+     * @param ffmpegUtil
      * @return
      */
 
@@ -151,7 +158,7 @@ public class DecodeThread implements Runnable {
     private boolean extAudio(String filename, String destPath, String tmpSuffix, FFMpegUtil ffMpegUtil) {
 
         //读取配置文件
-        int freq = 1;
+        int freq = 8000;
         int channels = 1;
         String outputDirType = "aodio";
         String tmpFileName = filename + tmpSuffix;
